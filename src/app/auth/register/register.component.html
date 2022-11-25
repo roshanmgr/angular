@@ -1,0 +1,266 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+
+
+<div class="container">
+    <br>
+    <p class="text-center">SAHAYOGI</p>
+    <hr>
+    
+    
+    
+    
+    
+    <div class="card bg-light gradient-custom-2">
+        <article class="card-body mx-auto" style="max-width: 400px;">
+            <h4 class="card-title mt-3 text-center">Create Account</h4>
+            <p class="text-center">Get started with your free account</p>
+            <!-- <p>
+                <a href="" class="btn btn-block btn-twitter"> <i class="fab fa-twitter"></i>   Login via Twitter</a>
+                <a href="" class="btn btn-block btn-facebook"> <i class="fab fa-facebook-f"></i>   Login via facebook</a>
+            </p> -->
+            <p class="divider-text">
+                <span class="bg-light">OR</span>
+            </p>
+            <form [formGroup]="registerForm">
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                    </div>
+                    <input name="name" id="name" formControlName="name" class="form-control" placeholder="Full name" type="text">
+                    <span 
+                    *ngIf="
+                    submitted || 
+                    forms['name'].dirty ||
+                    (forms['name'].touched && forms['name'].invalid) 
+                    "
+                    class="info-msg text-danger"
+                    >
+                    <small
+                    *ngIf="forms['name'].errors &&
+                    forms['name'].errors?.['required'] "
+                    >
+                    *Name is required !
+                    </small>
+                    
+                    <small
+                    *ngIf="forms['name'].errors &&
+                    forms['name'].errors?.['minlength'] "
+                    >
+                    *Your name Must Contain atleast 3 Characters !
+                    </small>
+                    
+                    <small
+                    *ngIf="forms['name'].errors &&
+                    forms['name'].errors?.['maxlength'] "
+                    >
+                    *Your name Must  Not Be More than 60 Characters !
+                    </small>
+                    
+                    <small
+                    *ngIf="forms['name'].errors &&
+                    forms['name'].errors?.['pattern'] "
+                    >
+                    *Your name Must Contain alphabet letters !
+                    </small>
+                    
+                    </span>
+
+                    
+
+                </div> <!-- form-group// -->
+                
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                    </div>
+                    <input 
+                    name="email" 
+                    id="email"
+                    formControlName="email"
+                    class="form-control" 
+                    placeholder="Email address" 
+                    type="email">
+                    <span 
+                    *ngIf="
+                    submitted || 
+                    forms['email'].dirty ||
+                    (forms['email'].touched && forms['email'].invalid) 
+                    "
+                    class="info-msg text-danger"
+                    >
+                    <small
+                    *ngIf="forms['email'].errors &&
+                    forms['email'].errors?.['required'] "
+                    >
+                    *E-mail is required !
+                </small>
+                                    
+                <small
+                *ngIf="forms['email'].errors &&
+                forms['email'].errors?.['pattern'] "
+                >
+                *Your Email Must Contain alphabet letters !
+            </small>
+            
+        </span>
+    </div> <!-- form-group// -->
+
+    <div class="form-group input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-address-card"></i> </span>
+        </div>
+        <input 
+        name="address" 
+        id="address"
+        formControlName="address"
+        class="form-control" 
+        placeholder="Address" 
+        type="text">
+        <span 
+        *ngIf="
+        submitted || 
+        forms['address'].dirty ||
+        (forms['address'].touched && forms['address'].invalid) 
+        "
+        class="info-msg text-danger"
+        >
+        <small
+        *ngIf="forms['address'].errors &&
+        forms['address'].errors?.['required'] "
+        >
+        *Address is required !
+        </small>
+                        
+        <small
+        *ngIf="forms['address'].errors &&
+        forms['address'].errors?.['pattern'] "
+        >
+        *Your Address Must Contain alphabet letters !
+        </small>
+        
+        </span>
+    </div> <!-- form-group// -->
+
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+                    </div>
+                    <!-- <select class="custom-select" style="max-width: 120px;">
+		    <option selected="">+977</option>
+		    <option value="1">+977-01</option>
+		</select> -->
+                    <input 
+                    name="mobile_no" 
+                    id="mobile_no"
+                    formControlName="mobile_no" 
+                    class="form-control" 
+                    placeholder="Phone number" 
+                    type="text">
+
+                    <span 
+                    *ngIf="
+                    submitted || 
+                    forms['mobile_no'].dirty ||
+                    (forms['mobile_no'].touched && forms['mobile_no'].invalid) 
+                    "
+                    class="info-msg text-danger"
+                    >
+                    <small
+                    *ngIf="forms['mobile_no'].errors &&
+                    forms['mobile_no'].errors?.['required'] "
+                    >
+                    *Name is required !
+                    </small>
+                    
+                    <small
+                    *ngIf="forms['mobile_no'].errors &&
+                    forms['mobile_no'].errors?.['minlength'] "
+                    >
+                    *Your Number Must Contain atleast 10 Characters !
+                    </small>
+                    
+                    <small
+                    *ngIf="forms['mobile_no'].errors &&
+                    forms['mobile_no'].errors?.['maxlength'] "
+                    >
+                    *Your Number Must  Not Be More than 10 Characters !
+                    </small>
+                    
+                    <small
+                    *ngIf="forms['name'].errors &&
+                    forms['name'].errors?.['pattern'] "
+                    >
+                    *Your Number Must Not Contain alphabet letters !
+                    </small>
+                    
+                    </span>
+                </div> <!-- form-group// -->
+                <!-- <div class="form-group input-group">
+    	<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-building"></i> </span>
+		</div>
+		<select class="form-control">
+			<option selected=""> Select job type</option>
+			<option>Designer</option>
+			<option>Manager</option>
+			<option>Accaunting</option>
+		</select>
+	</div> -->
+                <!-- form-group end.// -->
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                    </div>
+                    <input
+                    type="password"
+                    formControlName="password"
+                    name="password"
+                    class="form-control"
+                    placeholder=" Create password"
+                  />
+                  <span
+                    *ngIf="
+                      submitted ||
+                      forms['password'].dirty ||
+                      (forms['password'].touched && forms['password'].invalid)
+                    "
+                    class="info-msg text-danger"
+                  >
+                    <small
+                      *ngIf="forms['password'].errors && 
+                                    forms['password'].errors?.['required']"
+                    >
+                      * password is required
+                    </small>
+                    <small *ngIf="forms['password'].errors?.['pattern']">
+                      *Invalid password enter the valid password!
+                    </small>
+                    <small *ngIf="forms['password'].errors?.['minlength']">
+                      *password should be atleast 8 characters!
+                    </small>
+                  </span>
+
+                </div>
+                <!-- form-group// -->
+                <!-- <div class="form-group input-group">
+    	<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+		</div>
+        <input class="form-control" placeholder="Repeat password" type="password">
+    </div> -->
+                <!-- form-group// -->
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-block" (click)="onSendData(registerForm.value)"> Create Account </button>
+                </div> <!-- form-group// -->
+                <p class="text-center">Have an account? <a class="nav-link" routerLink="/auth/login">Log In</a> </p>
+            </form>
+        </article>
+    </div> <!-- card.// -->
+
+</div>
+<!--container end.//-->
