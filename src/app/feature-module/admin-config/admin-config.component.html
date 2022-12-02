@@ -38,19 +38,19 @@
  
         <tbody>
  
-            <tr>
+            <tr *ngFor="let admin of adminDetail; let i = index;">
  
-                <td>1</td>
+                <td>{{i+1}}</td>
  
-                <td>ram padu</td>
+                <td>{{admin.name}}</td>
  
-                <td>9865432165 </td>
+                <td>{{admin.mobile_no}} </td>
  
-                <td>Boudha</td>
+                <td>{{admin.address}}</td>
  
             </tr>
  
-            <tr>
+            <!-- <tr>
  
                 <td>2</td>
  
@@ -72,7 +72,7 @@
  
                 <td>Sukedhara</td>
  
-            </tr>
+            </tr> -->
       
  
         </tbody>

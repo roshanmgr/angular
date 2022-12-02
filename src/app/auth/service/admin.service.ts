@@ -8,14 +8,15 @@ import { environment } from 'src/environments/environment';
 })
 export class AdminService {
   baseUrl: string = environment.baseUrl;
-  registerApiEndPoint:string ='/register';
+  ApiEndPoint:string ='/user';
+  // getApiEndPoint:string = '/user'
   loginApiEndPoint:string ='/login';
 
 constructor(private httpClient:HttpClient){}
 
   addRegister(register:any):Observable<any>{
     return this.httpClient.post<any>(
-      this.baseUrl.concat(this.registerApiEndPoint),
+      this.baseUrl.concat(this.ApiEndPoint),
       register
     )
   }
@@ -27,4 +28,9 @@ constructor(private httpClient:HttpClient){}
     )
   }
 
+  getAll(response:any):Observable<any>{
+    return this.httpClient.get<any>(
+      this.baseUrl.concat(this.ApiEndPoint)
+    )
+  }
 }

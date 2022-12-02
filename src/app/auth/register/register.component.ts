@@ -13,12 +13,12 @@ export class RegisterComponent implements OnInit {
 
   });
   submitted: boolean | undefined;
-  isSubmitting:boolean|undefined;
+  isSubmitting: boolean | undefined;
 
 
   constructor(
     private formBuilder: FormBuilder,
-    private registerService:AdminService,
+    private registerService: AdminService,
   ) { }
 
   ngOnInit(): void {
@@ -83,4 +83,4 @@ export class RegisterComponent implements OnInit {
     }
   }
 
-  }
+}
